@@ -1,3 +1,3 @@
-# Project 1
+# Flask : Web Framework
 
-Web Programming with Python and JavaScript
+Developed By Manav Dadhaniya & Pal Khant
