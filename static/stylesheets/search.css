@@ -1,0 +1,44 @@
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+.navv{
+    z-index: 2;
+    height: 40%;
+    border-bottom: 1px solid black;
+    border-color: #c0c0c0;
+}
+.srch{
+    color: #c0c0c0;
+    padding: 14px, 28px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    border-color: #c0c0c0;
+    height: 50px;
+    font-size: 3vh;
+    width: 70%;
+    background: transparent;
+    margin-left: 5%;
+}
+.main{
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    overflow: auto;
+    color: #c0c0c0;
+    text-align: center;
+}
+li a{
+    color: #c0c0c0;
+}
+.elem{
+    text-align: left;
+    margin-top: .5%;
+    margin-left: 2%;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid black;
+    font-size: 3vw;
+}
