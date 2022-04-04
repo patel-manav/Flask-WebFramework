@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Login - Wisdom
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="/static/stylesheets/login.css">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="name">
+            <h1>Wisdom</h1>
+        </div>
+        <div class="credentials">
+            <p>{{headline}}</p>
+            <form action="{{url_for('home')}}" method="POST" style="float: left; margin-right: 25%;">
+                <p>Username:</p>
+                <input class="txt" type="text" name="username" placeholder="Username">
+                <br><br>
+                <p>Password:</p>
+                <input class="txt" type="password" name="password" placeholder="Password">
+                <br>
+                <input type="submit" class="btn default" value="Log in" style="margin-top: 13%;">
+            </form>
+            <form action="{{url_for('signup')}}" method="POST">
+                <p>Username:</p>
+                <input class="txt" type="text" name="username" placeholder="Username">
+                <br><br>
+                <p>Password:</p>
+                <input class="txt" type="password" name="password" placeholder="Password">
+                <br>
+                <input type="submit" class="btn default" value="Sign up" style="margin-top: 3%;">
+            </form>
+        </div>
+    </div>
+{% endblock %}

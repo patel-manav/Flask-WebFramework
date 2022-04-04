@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block heading %}
+    Wisdom
+{% endblock %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="name">
+            <h1>Wisdom</h1>
+            <p>A platform to search, rate and review your books.</p>
+        </div>
+        <div class="sign">
+            <form action="{{url_for('login')}}">
+                <input type="submit" name="login" class="btn default" value="Log in" height="60px">
+                <input type="submit" name="signup" class="btn default" value="Sign up" height="60px">
+            </form>
+        </div>
+    </div>
+{% endblock %}

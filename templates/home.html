@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Home - Wisdom
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/stylesheets/home.css">  
+{% endblock %}
+
+{% block body %}
+    <div class="navv">
+        <form action="{{url_for('logout')}}">
+            <input type="submit" class="logout default" value="Log out">
+        </form>
+        <h1>Wisdom</h1>
+        <p>A platform to search, rate and review your books.</p>
+    </div>
+    <div class="search">
+        <form action="{{url_for('search')}}" method="POST">
+            <input type="text" class="txt" name="search" placeholder="Enter Title, Author name or ISBN number...">
+            <br>
+            <input type="submit" class="btn default" value="Search" style="margin-top: 5%;" height="50px">
+        </form>
+    </div>
+{% endblock %}

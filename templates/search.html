@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+
+{% block heading %}
+    Search - Wisdom
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/stylesheets/home.css">
+    <link rel="stylesheet" href="/static/stylesheets/search.css">
+{% endblock %}
+
+{% block body %}
+    <div class="navv">
+        <form action="{{url_for('logout')}}">
+            <input type="submit" class="logout default" value="Log out">
+        </form>
+        <h1>Wisdom</h1>
+
+        <form action="{{url_for('search')}}" method="POST">
+            <input type="text" class="srch" name="search" placeholder="Enter Title, Author name or ISBN number...">
+            <input type="submit" class="btn default" value="Search" style="margin-left: 2%; margin-bottom: 10px;" height="60px">
+        </form>
+    </div>
+    <div class="main">
+        {% for bk,isb in res %}
+            <div class="elem">
+                <li><a href="{{url_for('book',isbn=isb)}}">{{bk}}</a></li>
+            </div>
+        {% endfor %}
+        <span style="font-size: 3vw; text-align: center;">{{ err }}</span>
+    </div>
+{% endblock %}

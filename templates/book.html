@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    {{title}} - Wisdom
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/stylesheets/search.css">
+    <link rel="stylesheet" href="/static/stylesheets/home.css">
+    <link rel="stylesheet" href="/static/stylesheets/book.css">
+{% endblock %}
+{% block body %}
+    <div class="navv">
+        <form action="{{url_for('logout')}}">
+            <input type="submit" class="logout default" value="Log out">
+        </form>
+        <h1>Wisdom</h1>
+
+        <form action="{{url_for('search')}}" method="POST">
+            <input type="text" class="srch" name="search" placeholder="Enter Title, Author name or ISBN number...">
+            <input type="submit" class="btn default" value="Search" style="margin-left: 2%; margin-bottom: 10px;" height="60px">
+        </form>
+    </div>
+    <div class="contain">
+        <div class="info">
+            <p><span>Name:</span> {{title}}</p>
+            <p><span>Author:</span> {{author}}</p>
+            <p><span>ISBN: </span>{{isbn}}</p>
+            <p><span>Published year:</span> {{year}}</p>
+            <p><span>Goodreads rating count:</span> {{ratings}}</p>
+            <p><span>Goodreads ratings:</span> {{rating}}</p>
+            <p><span>Wisdom ratings:</span> {{wisdom_rating}}</p>
+        </div>
+        <div class="reviews">
+            {% for usr,rev in reviews %}
+                <div style="width: 100%;">
+                    <h6 style="text-decoration: underline; color: #a9a9a9;">Posted by: {{usr}}</h6>
+                </div>
+                <div style="margin-bottom: 5%;">
+                    <h2>{{rev}} </h2>
+                </div>
+            {% endfor %}
+            <h2><span>{{nreviews}}</span></h2>
+            <div class="post">
+                <form action="/review" method="POST">
+                    <h3><span style="color: #a9a9a9; display: inline;">Rate Book:</span></h3>
+                    <input class="rat" type="number" value="3" min="1" max="5" step="1" name="rate">
+                    <h2>{{post}}</h2>
+                    <h3><span style="color: #a9a9a9">Your thoughts:</span></h3>
+                    <br>
+                    <textarea name="review" rows="6" cols="90" style="font-size: 1vw;"></textarea>
+                    <h6 style="display: inline;">*note: You will be able to post only one review per book.</h6>
+                    <input type="submit" class="logout default" name="post" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
